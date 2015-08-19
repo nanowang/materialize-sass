@@ -34,17 +34,25 @@
       // Override defaults
       options = $.extend(defaults, options);
 
-      if (options.dismissible) {
-        $overlay.click(function() {
-          $modal.closeModal(options);
-        });
-        // Return on ESC
-        $(document).on('keyup.leanModal' + overlayID, function(e) {
-          if (e.keyCode === 27) {   // ESC key
-            $modal.closeModal(options);
-          }
-        });
+      // HACKING add disimiss events after 300ms to prevent some weird ghost click on mobile
+      add_dimissible_function = function(){
+        return function(){
+          if (options.dismissible) {
+            $overlay.click(function() {
+              console.log('clicked on overlay')
+              $modal.closeModal(options);
+            });
+            // Return on ESC
+            $(document).on('keyup.leanModal' + overlayID, function(e) {
+              if (e.keyCode === 27) {   // ESC key
+                $modal.closeModal(options);
+              }
+            });
+          }          
+        }
       }
+
+      setTimeout(add_dimissible_function(), 300)
 
       $modal.find(".modal-close").on('click.close', function(e) {
         $modal.closeModal(options);
