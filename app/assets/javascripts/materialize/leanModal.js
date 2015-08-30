@@ -34,12 +34,13 @@
       // Override defaults
       options = $.extend(defaults, options);
 
-      // HACKING add disimiss events after 300ms to prevent some weird ghost click on mobile
+      // HACKING BY SELF
+      // add disimiss events after 300ms to prevent some weird ghost click on mobile
       add_dimissible_function = function(){
         return function(){
           if (options.dismissible) {
             $overlay.click(function() {
-              console.log('clicked on overlay')
+              // console.log('clicked on overlay')
               $modal.closeModal(options);
             });
             // Return on ESC
