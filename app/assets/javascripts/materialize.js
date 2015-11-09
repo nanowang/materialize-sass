@@ -689,7 +689,7 @@ else {
       $modal.data('associated-overlay', $overlay[0]);
 
       // Define Bottom Sheet animation
-      if ($modal.hasClass('bottom-sheet')) {
+      if ($modal.hasClass('right-sheet')) {
         $modal.velocity({bottom: "0", opacity: 1}, {
           duration: options.in_duration,
           queue: false,
@@ -744,7 +744,7 @@ else {
 
 
       // Define Bottom Sheet animation
-      if ($modal.hasClass('bottom-sheet')) {
+      if ($modal.hasClass('right-sheet')) {
         $modal.velocity({bottom: "-100%", opacity: 0}, {
           duration: options.out_duration,
           queue: false,
