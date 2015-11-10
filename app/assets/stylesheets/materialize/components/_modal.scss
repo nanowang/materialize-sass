@@ -79,7 +79,7 @@
 }
 
 // Modal Bottom Sheet Style
-.modal.right-sheet {
+.modal.bottom-sheet {
   top: auto;
   bottom: -100%;
   margin: 0;
@@ -87,4 +87,16 @@
   max-height: 45%;
   border-radius: 0;
   will-change: bottom, opacity;
+}
+
+// Modal Right Sheet Style
+.modal.right-sheet {
+  left: auto;
+  right: -100%;
+  margin: 0;
+  max-width: 50%;
+  max-height: 100%;
+  height: 100%
+  border-radius: 0;
+  will-change: right, opacity;
 }
