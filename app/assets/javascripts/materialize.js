@@ -702,6 +702,7 @@ else {
           }
         });
       }
+      // Define Right Sheet animation
       else if ($modal.hasClass('right-sheet')) {
         $modal.velocity({right: "0", opacity: 1}, {
           duration: options.in_duration,
@@ -775,6 +776,7 @@ else {
           }
         });
       }
+      // Define Right Sheet animation
       else if ($modal.hasClass('right-sheet')) {
         $modal.velocity({right: "-100%", opacity: 0}, {
           duration: options.out_duration,
