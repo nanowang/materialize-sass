@@ -83,6 +83,19 @@
           }
         });
       }
+      else if ($modal.hasClass('right-sheet')) {
+        $modal.velocity({right: "0", opacity: 1}, {
+          duration: options.in_duration,
+          queue: false,
+          ease: "easeOutCubic",
+          // Handle modal ready callback
+          complete: function() {
+            if (typeof(options.ready) === "function") {
+              options.ready();
+            }
+          }
+        });
+      }
       else {
         $.Velocity.hook($modal, "scaleX", 0.7);
         $modal.css({ top: options.starting_top });
@@ -127,6 +140,24 @@
       // Define Bottom Sheet animation
       if ($modal.hasClass('bottom-sheet')) {
         $modal.velocity({bottom: "-100%", opacity: 0}, {
+          duration: options.out_duration,
+          queue: false,
+          ease: "easeOutCubic",
+          // Handle modal ready callback
+          complete: function() {
+            $overlay.css({display:"none"});
+
+            // Call complete callback
+            if (typeof(options.complete) === "function") {
+              options.complete();
+            }
+            $overlay.remove();
+            _stack--;
+          }
+        });
+      }
+      else if ($modal.hasClass('right-sheet')) {
+        $modal.velocity({right: "-100%", opacity: 0}, {
           duration: options.out_duration,
           queue: false,
           ease: "easeOutCubic",
