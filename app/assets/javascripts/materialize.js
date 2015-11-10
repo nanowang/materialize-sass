@@ -702,6 +702,7 @@ else {
           }
         });
       }
+      /*
       else if ($modal.hasClass('right-sheet')) {
         $modal.velocity({right: "0", opacity: 1}, {
           duration: options.in_duration,
@@ -715,6 +716,7 @@ else {
           }
         });
       }
+      */
       else {
         $.Velocity.hook($modal, "scaleX", 0.7);
         $modal.css({ top: options.starting_top });
@@ -775,6 +777,7 @@ else {
           }
         });
       }
+      /*
       else if ($modal.hasClass('right-sheet')) {
         $modal.velocity({right: "-100%", opacity: 0}, {
           duration: options.out_duration,
@@ -793,6 +796,7 @@ else {
           }
         });
       }
+      */
       else {
         $modal.velocity(
           { top: options.starting_top, opacity: 0, scaleX: 0.7}, {
