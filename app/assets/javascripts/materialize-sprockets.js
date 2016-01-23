@@ -1,3 +1,4 @@
+//= require ./materialize/initial
 //= require ./materialize/jquery.easing.1.3
 //= require ./materialize/animation
 //= require ./materialize/velocity.min
@@ -26,6 +27,7 @@
 //= require ./materialize/date_picker/picker
 //= require ./materialize/date_picker/picker.date
 //= require ./materialize/character_counter
+//= require ./materialize/carousel.js
 
 
 
